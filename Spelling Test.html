@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Times Table Olympics, Spelling Test, Speak n Spell, KS2, KS3, UK Curriculum, Primary School Tests, Secondary School Tests">
+    <meta name="author" content="Lanky Donkey">
+    <title>Spelling Test</title>
+    <link rel="stylesheet" type="text/css" href="SpellingTest.css">
+</head>
+<body>
+<div id="summary">
+   <img src="speaknspell.jpg">
+    <input type="button" id="play" onclick="startgame()" value="Play"></br>
+    <input type="button" id="reset" onclick="resetgame()" value="Reset Game"></br>
+    <table><tbody>
+        </tr></td><td>Words Blitzed:</td>
+        <td><label id="wordsblitzed"></label></td></tr>
+        </tr></td><td>Correct Twice:</td>
+        <td><label id="correcttwice"></label></td></tr>
+        </tr></td><td>Correct Once:</td>
+        <td><label id="correctonce"></label></td></tr>
+        </tr></td><td>Points Lost:</td>
+        <td><label id="pointslost"></label></td></tr>
+        </tr></td><td>Words Remaining:</td>
+        <td><label id="wordsremaining"></label></td></tr>
+        </tr></td><td>Correct Spellings:</td>
+        <td><label id="totalcorrect"></label></td></tr>
+        </tr></td><td>Attempts:</td>
+        <td><label id="totalattempts"></label></td></tr>
+        </tr></td><td>Hit Ratio:</td>
+        <td><label id="hitratio"></label></td></tr>
+        </tr></td><td>Game Complete:</td>
+        <td><label id="complete"></label></td></tr>
+        </tr></td><td>SCORE:</td>
+        <td><label id="score"></label></td></tr>
+    </tbody></table>
+    </br>
+    <audio id="best"><source src="thebest.m4a" type="audio/mpeg" /></audio>
+    <audio id="sayword"><source src="http://ssl.gstatic.com/dictionary/static/sounds/de/0/spell.mp3"></audio>
+    <!--input type="button" id="changevoice" onclick="chooseVoice()" value="Change Voice"></br>-->
+    <label id="instructions">These are some of the hardest words to spell in the english language. Keep coming back everyday to blitz all the words and complete the game.
+        (You must spell a word correctly consecutively on 3 separate occasions to blitz it from the list). Each game is 10 questions long.
+    You will need to use Chrome, Firefox or Safari</label></br>
+    <label id="blitzlist"></label></br>
+    <a href="index.html">Back to Lanky Donkey</br><img src="LDL.jpg" width="100" height="80" alt="Back to Lanky Donkey"></a>
+    </div>
+<div id="chooseVoice">
+    <p id="msg"></p>
+    <select id="voiceselect" name="voice" onchange="playVoice()">
+    </select><input id="listen" onclick="playVoice()" type="button" value="LISTEN"></br>
+    <input id="gotogame" onclick="summaryDisplay()" type="button" value="PLAY GAME"></br>
+</div>
+<div id="main">
+    <img src="speaknspell.jpg"></br>
+    <label id="firstletter"></label>
+    <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" id ="answer">
+    <input id="b1" type="button" onclick="checkAnswer()" value="ENTER"></br>
+    <input id="b2" type="button" onclick="readQuestion()" value="Repeat Question">
+    <input id="b3" type="button" onclick="repeatQuestion()" value="Alternate Voice"></br>
+    <label id="correctspelling"></label>
+    <label id="wrongspelling"></label></br>
+    <label id="info"></label></br>
+    <label id="scorearea"></label></br>
+    <label id="progressarea"></label></br>
+    <label id="resultarea"></label></br>
+     <input type="button" id="playagain" onclick="summaryDisplay()" value="View Progress">
+    <label id="dictionaryarea"></label></br>
+</div>
+<div id="gameComplete">
+    <h1 id="congrats">CONGRATULATIONS YOU COMPLETED THE GAME</h1>
+    <img src="fonz.jpg" width="400" height="300" id="hol"></br>
+    <input id="stats" type="button" onclick="summaryDisplay()" value="View Stats" >
+     <canvas id="canvas"></canvas>
+</div>
+<script type="text/javascript" src="SpellingTest.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84404323-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
